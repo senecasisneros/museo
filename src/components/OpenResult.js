@@ -1,11 +1,12 @@
 import React from 'react';
-import {Modal, OverlayTrigger, Button} from 'react-bootstrap';
+import { Modal, Button } from 'react-bootstrap';
 import DisplayVideo from './DisplayVideo';
 
 class OpenResult extends React.Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     let {songName, artist} = this.props.result;
     return (

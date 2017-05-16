@@ -3,7 +3,7 @@ import axios from 'axios'
 import $ from 'jquery';
 import VideoStore from '../stores/VideoStore';
 import VideoActions from '../actions/VideoActions';
-import {ProgressBar} from 'react-bootstrap';
+import { ProgressBar } from 'react-bootstrap';
 
 class DisplayVideo extends React.Component {
   constructor(props) {
@@ -12,9 +12,9 @@ class DisplayVideo extends React.Component {
     this.state = {
       vidoes: VideoStore.getMusicAndLyrics()
     }
-
     this._onChange = this._onChange.bind(this);
   }
+
   componentDidMount() {
     VideoActions.getOneInfo(this.props.result);
     VideoStore.startListening(this._onChange);
@@ -29,7 +29,7 @@ class DisplayVideo extends React.Component {
       videos: VideoStore.getMusicAndLyrics()
     });
   }
-
+  
   render() {
     if (this.state.videos) {
       let iframe = this.state.videos.urlVideo;

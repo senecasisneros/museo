@@ -1,8 +1,8 @@
-import {Table} from 'react-bootstrap';
+import React from 'react';
 import VideoActions from '../actions/VideoActions';
 import VideoStore from '../stores/VideoStore';
 import OpenResult from './OpenResult';
-import React from 'react';
+import { Table } from 'react-bootstrap';
 
 class DisplayResults extends React.Component {
   constructor(props) {
@@ -55,11 +55,10 @@ class DisplayResults extends React.Component {
             <thead>
               <tr>
                 <th className="displayRow">Artist</th>
-                <th className="displayRow">Song Name</th>
+                <th className="displayRow">Song</th>
                 <th className="displayRow">URL</th>
               </tr>
             </thead>
-
             <tbody className="displayRow">
               {trs}
             </tbody>

@@ -41,7 +41,8 @@ body{
 
 .displayRow {
   text-align: center;
-  background-color: white;
+  background-color: gray;
+  cursor: pointer;
 }
 
 #directions {
@@ -69,16 +70,12 @@ body{
 .lyricText2 {
   font-size: 15px;
   margin-left: 0px;
-  /*margin: auto;*/
   margin-top: 20px;
-
 }
 
 .lyricText1 {
   font-size: 15px;
   margin-left: 0px;
-
-
 }
 
 .mainDisplay {

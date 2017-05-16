@@ -1,5 +1,5 @@
 import React from 'react';
-import {FormGroup, FormControl, Button} from 'react-bootstrap';
+import { FormGroup, FormControl, Button } from 'react-bootstrap';
 import VideoActions from '../actions/VideoActions';
 
 class SearchVideoLyric extends React.Component {
@@ -42,6 +42,7 @@ class SearchVideoLyric extends React.Component {
       })
     }
   }
+
   render() {
     return (
       <div className="mainPage" >
@@ -68,7 +69,6 @@ class SearchVideoLyric extends React.Component {
           </Button>
         </form>
       </div>
-
     )
   }
 }
