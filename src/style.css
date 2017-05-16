@@ -1,0 +1,33 @@
+/*iframe {
+width: 600px;
+height: 400px;
+}*/
+
+h1 {
+  position: relative;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+body{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  background-image: url('https://static.pexels.com/photos/6319/smartphone-vintage-technology-music.jpg');
+  background-size: cover;
+  text-align: center;
+}
+
+.center {
+  width:400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20%;
+}
+
+Table{
+  background-color: white;
+}
+
+.modal-lg {
+  width: 1200px;
+  height: 1200px;
+}
