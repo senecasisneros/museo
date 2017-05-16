@@ -63,7 +63,7 @@ class SearchVideoLyric extends React.Component {
             placeholder="Song Name"
             onChange={this.changeSong}
           />
-          <Button type="submit" className="btn btn-outline-primary submitButton">
+          <Button type="submit" className="btn btn-outline-primary submitButton" bsSize="large">
             <span className="glyphicon glyphicon-search"> Search</span>
           </Button>
         </form>

@@ -3,7 +3,6 @@ import VideoActions from '../actions/VideoActions';
 import VideoStore from '../stores/VideoStore';
 import OpenResult from './OpenResult';
 import React from 'react';
-import uuid from 'uuid';
 
 class DisplayResults extends React.Component {
   constructor(props) {
