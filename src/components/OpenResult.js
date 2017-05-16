@@ -7,10 +7,11 @@ class OpenResult extends React.Component {
     super(props);
   }
   render() {
+    let {songName, artist} = this.props.result;
     return (
       <Modal bsSize="large" className='modal-lg' show={this.props.show} onHide={this.props.onHide}>
         <Modal.Header closeButton>
-          <Modal.Title>MusicLyrics</Modal.Title>
+          <Modal.Title className="videoDetails">{artist} || {songName}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <DisplayVideo result={this.props.result}/>

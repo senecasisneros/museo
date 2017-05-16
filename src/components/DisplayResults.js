@@ -49,10 +49,7 @@ class DisplayResults extends React.Component {
         )
       });
       return (
-        <div>
-          <br/>
-          <br/>
-          <br/>
+        <div className="mainTable">
           <p id="directions">Click on the song to display the music video and lyrics</p>
           <Table striped bordered hover>
             <thead>

@@ -4,46 +4,36 @@ body{
   background-size: cover;
   /*font-family: 'Ravi Prakash', cursive;*/
   font-family: 'Inknut Antiqua', serif;
-
-
   background-repeat: no-repeat;
   background-position:center center;
   background-attachment: fixed;
   max-width: 100%;
   max-height: auto;
-
-
   min-height: 400px;
   margin-bottom: 100px;
   clear: both;
 }
 
+
+
 .modal-lg {
-  width: 1200px;
-  height: 1200px;
+  width: 80%;
+  height: 100%;
+  margin : 20px auto;
 }
 
 #mainTitle {
   text-align: center;
-  font-size: 80px;
-}
-
-.form-control {
-  /*width: 40%;
-  height: 40px;
-  font-size: 15px;
-  margin: 1px 30%;*/
+  color: white;
 }
 
 .form {
   margin: 0px auto;
   width: 50%;
-  /*height: 50px;*/
   font-size: 15px;
 }
 
 .submitButton {
-  /*margin: 10px 45% 10px 45%;*/
   font-family: 'Inknut Antiqua', serif;
   margin-top: 2px;
 
@@ -60,14 +50,41 @@ body{
   color: black;
 }
 
-.table-striped>tbody>tr:nth-child(odd)>td,
+/*.table-striped>tbody>tr:nth-child(odd)>td,
 .table-striped>tbody>tr:nth-child(odd)>th,
 .table-striped>tbody>tr:nth-child(even)>td,
 .table-striped>tbody>tr:nth-child(even)>th {
   background-color: gray;
+}*/
+
+.mainTable {
+  margin-top: 50px;
 }
 
-/*.glyphicon.v-centered {
-position: inherit;
-vertical-align: middle;
-}*/
+.videoDetails {
+  text-align: center;
+  font-size: 30px;
+}
+
+.lyricText2 {
+  font-size: 15px;
+  margin-left: 0px;
+  /*margin: auto;*/
+  margin-top: 20px;
+
+}
+
+.lyricText1 {
+  font-size: 15px;
+  margin-left: 0px;
+
+
+}
+
+.mainDisplay {
+  margin-top: 13px;
+}
+
+.iframe {
+  margin-right: 30px;
+}
