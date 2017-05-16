@@ -54,17 +54,17 @@ class DisplayResults extends React.Component {
           <br/>
           <br/>
           <br/>
-          {/* <p>Click on the song name to display the music video and lyrics</p> */}
+          <p id="directions">Click on the song to display the music video and lyrics</p>
           <Table striped bordered hover>
             <thead>
               <tr>
-                <th>Artist</th>
-                <th>Song Name</th>
-                <th>URL</th>
+                <th className="displayRow">Artist</th>
+                <th className="displayRow">Song Name</th>
+                <th className="displayRow">URL</th>
               </tr>
             </thead>
 
-            <tbody>
+            <tbody className="displayRow">
               {trs}
             </tbody>
           </Table>

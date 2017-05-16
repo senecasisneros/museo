@@ -23,7 +23,7 @@ body{
 }
 
 Table {
-  background-color: white;
+  /*background-color: grey;*/
 }
 
 .modal-lg {
@@ -48,3 +48,21 @@ Table {
   margin-left: 45%;
   margin-bottom: 10px;
 }
+
+.displayRow {
+  text-align: center;
+  background-color: white;
+}
+
+#directions {
+  text-align: center;
+  font-size: 20px;
+  color: black;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th,
+.table-striped>tbody>tr:nth-child(even)>td,
+.table-striped>tbody>tr:nth-child(even)>th {
+   background-color: gray;
+ }
