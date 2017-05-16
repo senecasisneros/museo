@@ -14,10 +14,8 @@ body{
   clear: both;
 }
 
-
-
 .modal-lg {
-  width: 80%;
+  width: auto;
   height: 100%;
   margin : 20px auto;
 }
@@ -36,7 +34,6 @@ body{
 .submitButton {
   font-family: 'Inknut Antiqua', serif;
   margin-top: 2px;
-
 }
 
 .displayRow {
@@ -68,8 +65,8 @@ body{
 }
 
 .lyricText2 {
-  font-size: 15px;
-  margin-left: 0px;
+  font-size: 14px;
+  /*margin-left: 0px;*/
   margin-top: 20px;
 }
 
@@ -83,5 +80,5 @@ body{
 }
 
 .iframe {
-  margin-right: 30px;
+  /*margin-right: 30px;*/
 }

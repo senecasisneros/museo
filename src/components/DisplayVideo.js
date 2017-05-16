@@ -29,7 +29,7 @@ class DisplayVideo extends React.Component {
       videos: VideoStore.getMusicAndLyrics()
     });
   }
-  
+
   render() {
     if (this.state.videos) {
       let iframe = this.state.videos.urlVideo;
@@ -44,6 +44,7 @@ class DisplayVideo extends React.Component {
         }
       });
       let textLyrics2 = this.state.videos.lyrics.map((val, index) => {
+        console.log('this.state.videos.lyrics.length:', this.state.videos.lyrics.length);
         if (this.state.videos.lyrics.length / 2 >= index && val) {
           if (val === 'br')
           return <br key={index} />
@@ -54,14 +55,11 @@ class DisplayVideo extends React.Component {
       return (
         <div className="mainDisplay container">
           <div className="row">
-            <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 iframe">
+            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 iframe">
               <iframe width="500" height="500" src={src + '?autoplay=1'} frameBorder={0} allowFullScreen="allowFullScreen"></iframe>
             </div>
-            <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 lyricText2">
-              {textLyrics2}
-            </div>
-            <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 lyricText1">
-              {textLyrics1}
+            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 lyricText2">
+              <p>{textLyrics2} {textLyrics1}</p>
             </div>
           </div>
         </div>
@@ -73,3 +71,6 @@ class DisplayVideo extends React.Component {
 }
 
 export default DisplayVideo;
+{/* <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 lyricText1">
+  {textLyrics1}
+</div> */}
