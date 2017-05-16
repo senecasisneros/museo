@@ -1,16 +1,21 @@
 body{
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  /*font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;*/
   background-image: url('https://images.pexels.com/photos/317383/pexels-photo-317383.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb');
   background-size: cover;
   /*font-family: 'Ravi Prakash', cursive;*/
   font-family: 'Inknut Antiqua', serif;
-}
 
-.mainTitle {
-  color: white;
-  font-size: 100px;
-  text-align: center;
-  margin-top: 40px;
+
+  background-repeat: no-repeat;
+  background-position:center center;
+  background-attachment: fixed;
+  max-width: 100%;
+  max-height: auto;
+
+
+  min-height: 400px;
+  margin-bottom: 100px;
+  clear: both;
 }
 
 .modal-lg {
@@ -18,16 +23,30 @@ body{
   height: 1200px;
 }
 
+#mainTitle {
+  text-align: center;
+  font-size: 80px;
+}
+
 .form-control {
-  width: 40%;
+  /*width: 40%;
   height: 40px;
   font-size: 15px;
-  margin: 1px 30%
+  margin: 1px 30%;*/
+}
+
+.form {
+  margin: 0px auto;
+  width: 50%;
+  /*height: 50px;*/
+  font-size: 15px;
 }
 
 .submitButton {
-  margin: 10px 45% 10px 45%;
+  /*margin: 10px 45% 10px 45%;*/
   font-family: 'Inknut Antiqua', serif;
+  margin-top: 2px;
+
 }
 
 .displayRow {
@@ -49,6 +68,6 @@ body{
 }
 
 /*.glyphicon.v-centered {
-  position: inherit;
-  vertical-align: middle;
+position: inherit;
+vertical-align: middle;
 }*/

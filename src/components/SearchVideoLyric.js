@@ -45,7 +45,7 @@ class SearchVideoLyric extends React.Component {
   render() {
     return (
       <div className="mainPage" >
-        <h1 className="mainTitle">MusicLyrics</h1>
+        <h1 id="mainTitle">MusicLyrics</h1>
         <form onSubmit={this.submit} className='form'>
           <FormGroup
             controlId="formBasicText"
@@ -63,7 +63,7 @@ class SearchVideoLyric extends React.Component {
             placeholder="Song Name"
             onChange={this.changeSong}
           />
-          <Button type="submit" className="btn btn-outline-primary submitButton" bsSize="large">
+          <Button type="submit" className="btn btn-outline-primary submitButton center-block" bsSize="large">
             <span className="glyphicon glyphicon-search"> Search</span>
           </Button>
         </form>
