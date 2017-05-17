@@ -55,10 +55,10 @@ class DisplayVideo extends React.Component {
       return (
         <div className="mainDisplay container">
           <div className="row">
-            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 iframe">
-              <iframe width="500" height="500" src={src + '?autoplay=1'} frameBorder={0} allowFullScreen="allowFullScreen"></iframe>
+            <div className="col-xs-12 col-sm-12 col-md-8 col-lg-6 iframe">
+              <iframe width="560" height="560" src={src + '?autoplay=1'} frameBorder={0} allowFullScreen="allowFullScreen"></iframe>
             </div>
-            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 lyricText2">
+            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-6 lyricText2">
               <p>{textLyrics2} {textLyrics1}</p>
             </div>
           </div>
