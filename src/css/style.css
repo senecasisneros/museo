@@ -16,8 +16,8 @@ body{
 
 .modal-lg {
   width: auto;
-  height: 100%;
-  margin : 20px auto;
+  height: auto;
+  margin : 20px 5px;
 }
 
 #mainTitle {
@@ -52,7 +52,7 @@ body{
 .table-striped>tbody>tr:nth-child(odd)>th,
 .table-striped>tbody>tr:nth-child(even)>td,
 .table-striped>tbody>tr:nth-child(even)>th {
-  background-color: gray;
+background-color: gray;
 }*/
 
 .mainTable {
@@ -64,17 +64,16 @@ body{
   font-size: 30px;
 }
 
-.lyricText2 {
-  font-size: 14px;
-  /*margin-left: 0px;*/
-  margin-top: 20px;
-}
-
-.lyricText1 {
-  font-size: 15px;
+lyricText2 {
   margin-left: 0px;
 }
 
 .mainDisplay {
   margin-top: 13px;
+}
+
+.lyrics {
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 12px;
 }

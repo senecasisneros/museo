@@ -35,21 +35,14 @@ class DisplayVideo extends React.Component {
       let iframe = this.state.videos.urlVideo;
       let src = $(iframe).attr('src');
 
-      let textLyrics1 = this.state.videos.lyrics.map((val, index) => {
-        if (this.state.videos.lyrics.length / 2 < index && val) {
-          if (val === 'br')
-          return <br key={index} />
-          else
-          return val
+      let textLyrics = this.state.videos.lyrics.map((val, index) => {
+        if (val) {
+          return(<p key={index} className="lyrics">{val}</p>)
         }
       });
-      let textLyrics2 = this.state.videos.lyrics.map((val, index) => {
-        console.log('this.state.videos.lyrics.length:', this.state.videos.lyrics.length);
-        if (this.state.videos.lyrics.length / 2 >= index && val) {
-          if (val === 'br')
-          return <br key={index} />
-          else
-          return val
+      let textLyrics1 = this.state.videos.lyrics.map((val, index) => {
+        if (val) {
+          return(<p key={index} className="lyrics">{val}</p>)
         }
       });
       return (
@@ -59,7 +52,7 @@ class DisplayVideo extends React.Component {
               <iframe width="560" height="560" src={src + '?autoplay=1'} frameBorder={0} allowFullScreen="allowFullScreen"></iframe>
             </div>
             <div className="col-xs-12 col-sm-12 col-md-4 col-lg-6 lyricText2">
-              <p>{textLyrics2} {textLyrics1}</p>
+              <p>{textLyrics} {textLyrics1}</p>
             </div>
           </div>
         </div>
@@ -71,6 +64,3 @@ class DisplayVideo extends React.Component {
 }
 
 export default DisplayVideo;
-{/* <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3 lyricText1">
-  {textLyrics1}
-</div> */}
