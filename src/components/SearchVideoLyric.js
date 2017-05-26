@@ -6,40 +6,39 @@ class SearchVideoLyric extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      songName: "",
-      artist: ""
-    }
+      songName: '',
+      artist: '',
+    };
     this.getValidationState = this.getValidationState.bind(this);
-    this.changeSong = this.changeSong.bind(this)
-    this.changeArtist = this.changeArtist.bind(this)
-    this.submit = this.submit.bind(this)
+    this.changeSong = this.changeSong.bind(this);
+    this.changeArtist = this.changeArtist.bind(this);
+    this.submit = this.submit.bind(this);
   }
 
   getValidationState() {
-    let {song_name, artist} = this.state;
-    if (song_name && artist)
-    return 'success';
-    else return 'error';
+    const { song_name, artist } = this.state;
+    if (song_name && artist) { return 'success'; }
+    return 'error';
   }
 
   changeSong(e) {
-    this.setState({songName: e.target.value})
+    this.setState({ songName: e.target.value });
   }
 
   changeArtist(e) {
-    this.setState({artist:e.target.value})
+    this.setState({ artist: e.target.value });
   }
 
   submit(e) {
-    e.preventDefault()
-    let {songName, artist} = this.state;
+    e.preventDefault();
+    const { songName, artist } = this.state;
     if (songName || artist) {
-      //trigger action
-      VideoActions.getInfo({songName, artist})
+      // trigger action
+      VideoActions.getInfo({ songName, artist });
       this.setState({
         songName: '',
-        artist: ''
-      })
+        artist: '',
+      });
     }
   }
 
@@ -47,7 +46,7 @@ class SearchVideoLyric extends React.Component {
     return (
       <div className="mainPage" >
         <h1 id="mainTitle">MusicLyrics</h1>
-        <form onSubmit={this.submit} className='form'>
+        <form onSubmit={this.submit} className="form">
           <FormGroup
             controlId="formBasicText"
             validationState={this.getValidationState()}
@@ -69,7 +68,7 @@ class SearchVideoLyric extends React.Component {
           </Button>
         </form>
       </div>
-    )
+    );
   }
 }
 

@@ -4,39 +4,39 @@ const ServerActions = {
   receiveVideo(videos) {
     AppDispatcher.dispatch({
       type: 'RECEIVE_VIDEOS',
-      videos
-    })
+      videos,
+    });
   },
   receiveOneVideo(id) {
     AppDispatcher.dispatch({
       type: 'RECEIVE_ONE_VIDEO',
-      id
-    })
+      id,
+    });
   },
   createVideo(video) {
     AppDispatcher.dispatch({
-      type: "CREATE_VIDEO",
-      video
-    })
+      type: 'CREATE_VIDEO',
+      video,
+    });
   },
   deleteVideo(id) {
     AppDispatcher.dispatch({
       type: 'DELETE_VIDEO',
-      id
-    })
+      id,
+    });
   },
   getOneInfo(obj) {
     AppDispatcher.dispatch({
-      type: "GET_ONE_INFO",
-      obj
-    })
+      type: 'GET_ONE_INFO',
+      obj,
+    });
   },
   getInfo(obj) {
     AppDispatcher.dispatch({
-      type: "GET_INFO",
-      obj
-    })
-  }
-}
+      type: 'GET_INFO',
+      obj,
+    });
+  },
+};
 
 export default ServerActions;

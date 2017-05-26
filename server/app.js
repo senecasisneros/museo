@@ -1,6 +1,6 @@
 // CONSTANTS
 const PORT = process.env.PORT || 8000;
-const MONGO_URI = process.env.MONGOLAB_URI || 'mongodb://localhost/videoAndLyricsdb';
+const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost/videoAndLyricsdb';
 
 // PACKAGE REQUIRES
 const bodyParser = require('body-parser');
@@ -8,27 +8,33 @@ const cookieParser = require('cookie-parser');
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
-const webpack = require('webpack');
-const webpackConfig = require('../webpack.config');
+
+require('dotenv').load({ silent: true });
 
 // DB CONNECT
 require('mongoose').connect(MONGO_URI, err => {
-  if(err) throw err;
+  if (err) throw err;
   console.log(`MongoDB connected to ${MONGO_URI}`);
 });
 
 // APP DECLARATION
 const app = express();
 
-// WEBPACK CONFIG
-const compiler = webpack(webpackConfig);
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../build')));
+} else {
+  // WEBPACK CONFIG
+  const webpack = require('webpack');
+  const webpackConfig = require('../webpack.dev');
+  const compiler = webpack(webpackConfig);
 
-app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true,
-  publicPath: webpackConfig.output.publicPath
-}));
+  app.use(require('webpack-dev-middleware')(compiler, {
+    noInfo: true,
+    publicPath: webpackConfig.output.publicPath,
+  }));
 
-app.use(require('webpack-hot-middleware')(compiler));
+  app.use(require('webpack-hot-middleware')(compiler));
+}
 
 // GENERAL MIDDLEWARE
 app.use(morgan('dev'));
@@ -40,13 +46,13 @@ app.use(cookieParser());
 app.use('/api', require('./routes/api'));
 
 app.get('*', (req, res) => {
-  let indexPath = path.join(__dirname, '../index.html');
+  const indexPath = path.join(__dirname, '../src/index.html');
   res.sendFile(indexPath);
 });
 
 // SERVER LISTEN
 app.listen(PORT, err => {
-  if(err) throw err;
+  if (err) throw err;
 
   console.log(`Server listening at http://localhost:${PORT}`);
 });

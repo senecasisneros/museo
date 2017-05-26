@@ -12,7 +12,7 @@ const API = {
     axios.get('/api/videos/:id')
     .then(res => res.data)
     .then(ServerActions.getOneVideo)
-    .catch(console.error)
+    .catch(console.error);
   },
   createVideo(video) {
     axios.post('/api/videos', video)
@@ -30,14 +30,14 @@ const API = {
     axios.post('/api/info', obj)
     .then(res => res.data)
     .then(ServerActions.getOneInfo)
-    .catch(console.error)
+    .catch(console.error);
   },
   getInfo(obj) {
     axios.post('/api/info/links', obj)
     .then(res => res.data)
     .then(ServerActions.getInfo)
-    .catch(console.error)
-  }
-}
+    .catch(console.error);
+  },
+};
 
 export default API;

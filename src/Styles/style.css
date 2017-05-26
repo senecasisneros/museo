@@ -1,9 +1,9 @@
+/*@import url("https://fonts.googleapis.com/css?family=Inknut+Antiqua|Ravi+Prakash");*/
+
 body{
-  /*font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;*/
   background-image: url('https://images.pexels.com/photos/317383/pexels-photo-317383.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb');
   background-size: cover;
-  /*font-family: 'Ravi Prakash', cursive;*/
-  font-family: 'Inknut Antiqua', serif;
+  /*font-family: 'Inknut Antiqua', serif;*/
   background-repeat: no-repeat;
   background-position:center center;
   background-attachment: fixed;
@@ -32,7 +32,7 @@ body{
 }
 
 .submitButton {
-  font-family: 'Inknut Antiqua', serif;
+  /*font-family: 'Inknut Antiqua', serif;*/
   margin-top: 2px;
 }
 

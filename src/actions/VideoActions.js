@@ -17,7 +17,7 @@ const VideoActions = {
   },
   getInfo(obj) {
     API.getInfo(obj);
-  }
-}
+  },
+};
 
-export default VideoActions
+export default VideoActions;

@@ -1,11 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
+import App from './components/App';
 
-const css = require('./css/style.css');
-
-import App from './components/App'
-
+let css = require('./Styles/style.css');
+import globalStyles from './assets/styles/global.css';
 render(
-  <App/>,
+  <App />,
   document.getElementById('root')
 );

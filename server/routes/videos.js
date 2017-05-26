@@ -1,4 +1,4 @@
-'use strict';
+
 
 const express = require('express');
 const router = express.Router();
@@ -14,7 +14,7 @@ router.route('/')
 .post((req, res) => {
   Video.create(req.body, (err, videos) => {
     res.status(err ? 400 : 200).send(err || videos);
-  })
+  });
 });
 
 router.route('/:id')
@@ -26,11 +26,11 @@ router.route('/:id')
 .delete((req, res) => {
   Video.findByIdAndRemove(req.params.id, (err, videos) => {
     res.status(err ? 400 : 200).send(err || videos);
-  })
+  });
 })
 .put((req, res) => {
-  Video.findByIdAndUpdate(req.params.id, {$set: req.body}, {new: true}, (err, videos) => {
-    if(err) {
+  Video.findByIdAndUpdate(req.params.id, { $set: req.body }, { new: true }, (err, videos) => {
+    if (err) {
       return res.status(400).send(err);
     }
     Video.find({}, (err, videos) => {
