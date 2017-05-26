@@ -6,7 +6,6 @@ import DisplayVideo from './DisplayVideo';
 class OpenResult extends React.Component {
   static propTypes = {
     result: PropTypes.object,
-    show: PropTypes.string,
     onHide: PropTypes.func,
   };
 

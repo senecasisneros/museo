@@ -7,9 +7,9 @@ import VideoStore from '../stores/VideoStore';
 import VideoActions from '../actions/VideoActions';
 
 class DisplayVideo extends React.Component {
-  static propTypes = {
-    result: PropTypes.string,
-  };
+    static propTypes = {
+      result: PropTypes.object,
+    };
 
   constructor(props) {
     super(props);
@@ -57,7 +57,7 @@ class DisplayVideo extends React.Component {
               <iframe width="560" height="560" src={`${src}?autoplay=1`} frameBorder={0} allowFullScreen="allowFullScreen" />
             </div>
             <div className="col-xs-12 col-sm-12 col-md-4 col-lg-6 lyricText2">
-              <p>{textLyrics} {textLyrics1}</p>
+              {textLyrics} {textLyrics1}
             </div>
           </div>
         </div>
@@ -66,5 +66,4 @@ class DisplayVideo extends React.Component {
     return <ProgressBar active now={45} />;
   }
 }
-
 export default DisplayVideo;

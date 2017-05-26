@@ -6,18 +6,17 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
     'webpack-hot-middleware/client?reload=true',
-    'bootstrap-loader',
     './src/Styles/style.css',
-    './src/index'
+    './src/index',
   ],
   target: 'web',
   output: {
     path: path.join(__dirname, '/build'),
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   devServer: {
-    contentBase: './src'
+    contentBase: './src',
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
