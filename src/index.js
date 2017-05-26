@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import App from './components/App';
 
-let css = require('./Styles/style.css');
+const css = require('./Styles/style.css');
 import globalStyles from './assets/styles/global.css';
 render(
   <App />,

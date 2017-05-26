@@ -2,10 +2,15 @@ import React from 'react';
 // import axios from 'axios';
 import { ProgressBar } from 'react-bootstrap';
 import $ from 'jquery';
+import PropTypes from 'prop-types';
 import VideoStore from '../stores/VideoStore';
 import VideoActions from '../actions/VideoActions';
 
 class DisplayVideo extends React.Component {
+  static propTypes = {
+    result: PropTypes.string,
+  };
+
   constructor(props) {
     super(props);
 

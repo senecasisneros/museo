@@ -1,11 +1,14 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 import DisplayVideo from './DisplayVideo';
 
 class OpenResult extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  static propTypes = {
+    result: PropTypes.object,
+    show: PropTypes.string,
+    onHide: PropTypes.func,
+  };
 
   render() {
     const { songName, artist } = this.props.result;
