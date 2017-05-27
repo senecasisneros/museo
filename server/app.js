@@ -9,7 +9,7 @@ const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
 
-require('dotenv').load({ silent: true });
+// require('dotenv').load({ silent: true });
 
 // DB CONNECT
 require('mongoose').connect(MONGO_URI, err => {
