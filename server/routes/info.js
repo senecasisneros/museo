@@ -44,7 +44,8 @@ router.route('/').post((req, res) => {
     res.send({ songName, artist, urlVideo, lyrics });
   })
   .catch(err => {
-    console.log('errorPost:', error);;
+    console.log('errorPost:', error);
+    throw err;
   });
 });
 
