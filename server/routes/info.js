@@ -44,30 +44,30 @@ router.route('/').post((req, res) => {
     res.send({ songName, artist, urlVideo, lyrics });
   })
   .catch(err => {
-    throw err;
+    console.log('errorPost:', error);;
   });
 });
 
-router.route('/links').post((req, res) => {
-  const { songName, artist } = req.body;
-  axios.get(encodeURI(`${url + songName} ${artist}`))
-  .then(res => res.data)
-  .then(result => {
-    const obj = [];
-    for (let i = 0; i < 10; i++) {
-      obj.push(
-        {
-          url: result.results[i].url,
-          songName: result.results[i].song_title,
-          artist: result.results[i].artists[0].name,
-        }
-      );
-    }
-    res.send(obj);
-  })
-  .catch(err => {
-    throw err;
-  });
-});
+// router.route('/links').post((req, res) => {
+//   const { songName, artist } = req.body;
+//   axios.get(encodeURI(`${url + songName} ${artist}`))
+//   .then(res => res.data)
+//   .then(result => {
+//     const obj = [];
+//     for (let i = 0; i < 10; i++) {
+//       obj.push(
+//         {
+//           url: result.results[i].url,
+//           songName: result.results[i].song_title,
+//           artist: result.results[i].artists[0].name,
+//         }
+//       );
+//     }
+//     res.send(obj);
+//   })
+//   .catch(err => {
+//     throw err;
+//   });
+// });
 
 module.exports = router;
