@@ -45,7 +45,7 @@ class SearchVideoLyric extends React.Component {
   render() {
     return (
       <div className="mainPage" >
-        <h1 id="mainTitle">Music and Lyrics</h1>
+        <h1 id="mainTitle">Museo</h1>
         <form onSubmit={this.submit} className="form">
           <FormGroup
             controlId="formBasicText"

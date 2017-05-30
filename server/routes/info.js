@@ -8,7 +8,6 @@ let urlLyrics = 'http://search.azlyrics.com/search.php?q=';
 
 router.route('/').post((req, res) => {
   let { songName, artist, url } = req.body;
-    console.log('req.body.url1:', req.body.url.pathname);
   axios.get(url)
   .then(res => {
     const html = res.data;
