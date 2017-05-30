@@ -32,6 +32,7 @@ const ServerActions = {
     });
   },
   getInfo(obj) {
+    console.log('obj:', obj);
     AppDispatcher.dispatch({
       type: 'GET_INFO',
       obj,

@@ -34,7 +34,10 @@ const API = {
   },
   getInfo(obj) {
     axios.post('/api/info/links', obj)
-    .then(res => res.data)
+    .then(res => {
+      console.log('res.data:', res.data);
+      return res.data;
+    })
     .then(ServerActions.getInfo)
     .catch(console.error);
   },

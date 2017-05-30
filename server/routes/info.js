@@ -8,11 +8,13 @@ const url = 'https://imvdb.com/api/v1/search/videos?q=';
 const urlLyrics = 'http://search.azlyrics.com/search.php?q=';
 
 router.route('/').post((req, res) => {
+  console.log('backend /');
   const { songName, artist, url } = req.body;
+  //url: https://imvdb.com/video/coldplay/magic
 
   axios.get(url)
-  .then(res => {
-    const html = res.data;
+  .then(results => {
+    const html = results.data;
     const $ = cheerio.load(html);
 
     urlVideo = embed($('.videoInfoList')['3'].children[0].next.children[0].attribs.href);
@@ -33,8 +35,9 @@ router.route('/').post((req, res) => {
     const getLyrics = $('.col-lg-8')['0'].children[16].children;
     const lyrics = getLyrics.map((val, index) => {
       if (index >= 2) {
-        if (val.data);
-        return val.data;
+        if (val.data) {
+          return val.data;
+        }
         if (val.name === 'br') {
           return val.name;
         }
@@ -44,15 +47,22 @@ router.route('/').post((req, res) => {
     res.send({ songName, artist, urlVideo, lyrics });
   })
   .catch(err => {
-    console.log('errorPost:', error);
+    console.log('errorPost:', err);
     throw err;
   });
 });
 
+
 router.route('/links').post((req, res) => {
+  console.log('backend /links');
   const { songName, artist } = req.body;
   axios.get(encodeURI(`${url + songName} ${artist}`))
-  .then(res => res.data)
+  .then(info => {
+    return info.data;
+  })
+  .catch(err => {
+    throw err;
+  })
   .then(result => {
     const obj = [];
     for (let i = 0; i < 10; i++) {
