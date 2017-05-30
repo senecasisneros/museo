@@ -4,22 +4,19 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const embed = require('embed-video');
 
-const url = 'https://imvdb.com/api/v1/search/videos?q=';
-const urlLyrics = 'http://search.azlyrics.com/search.php?q=';
+let urlLyrics = 'http://search.azlyrics.com/search.php?q=';
 
 router.route('/').post((req, res) => {
-  console.log('backend /');
-  const { songName, artist, url } = req.body;
-  //url: https://imvdb.com/video/coldplay/magic
-
+  let { songName, artist, url } = req.body;
+    console.log('req.body.url1:', req.body.url.pathname);
   axios.get(url)
-  .then(results => {
-    const html = results.data;
+  .then(res => {
+    const html = res.data;
     const $ = cheerio.load(html);
 
     urlVideo = embed($('.videoInfoList')['3'].children[0].next.children[0].attribs.href);
-    const newArtist = artist.replace(/ /g, '+');
-    const newSongName = songName.replace(/ /g, '+');
+    let newArtist = artist.replace(/ /g, '+');
+    let newSongName = songName.replace(/ /g, '+');
 
     return axios.get(`${urlLyrics + newArtist}+${newSongName}+&what=all`);
   })
@@ -38,31 +35,28 @@ router.route('/').post((req, res) => {
         if (val.data) {
           return val.data;
         }
-        if (val.name === 'br') {
-          return val.name;
-        }
+        // if (val.name === 'br') {
+        //   return val.name;
+        // }
       }
       return null;
     });
     res.send({ songName, artist, urlVideo, lyrics });
   })
   .catch(err => {
-    console.log('errorPost:', err);
+    console.error('errGet:', err);
     throw err;
   });
 });
 
+let url = 'https://imvdb.com/api/v1/search/videos?q=';
 
 router.route('/links').post((req, res) => {
-  console.log('backend /links');
-  const { songName, artist } = req.body;
-  axios.get(encodeURI(`${url + songName} ${artist}`))
-  .then(info => {
-    return info.data;
-  })
-  .catch(err => {
-    throw err;
-  })
+  let { songName, artist} = req.body;
+  axios.get(encodeURI(url + songName + ' ' + artist))
+  // axios.get(encodeURI(`${url + songName} ${artist}`))
+  // axios.get(encodeURI(`https://imvdb.com/api/v1/search/videos?q= + ${songName} ${artist}`))
+  .then(res => res.data)
   .then(result => {
     const obj = [];
     for (let i = 0; i < 10; i++) {
