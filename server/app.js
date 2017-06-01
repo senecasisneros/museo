@@ -1,6 +1,7 @@
 // CONSTANTS
 const PORT = process.env.PORT || 8000;
-const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost/Museo';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/Museo';
+
 
 // PACKAGE REQUIRES
 const bodyParser = require('body-parser');
@@ -12,9 +13,9 @@ const path = require('path');
 require('dotenv').load({ silent: true });
 
 // DB CONNECT
-require('mongoose').connect(MONGO_URI, err => {
+require('mongoose').connect(MONGODB_URI, err => {
   if (err) throw err;
-  console.log(`MongoDB connected to ${MONGO_URI}`);
+  console.log(`MongoDB connected to ${MONGODB_URI}`);
 });
 
 // APP DECLARATION
