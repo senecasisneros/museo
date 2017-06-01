@@ -17,7 +17,9 @@ class SearchVideoLyric extends React.Component {
 
   getValidationState() {
     const { song_name, artist } = this.state;
-    if (song_name && artist) { return 'success'; }
+    if (song_name && artist) {
+      return 'success';
+    }
     return 'error';
   }
 

@@ -45,11 +45,11 @@ class DisplayVideo extends React.Component {
           return (<p key={index} className="lyrics">{val}</p>);
         }
       });
-      const textLyrics1 = this.state.videos.lyrics.map((val, index) => {
-        if (val) {
-          return (<p key={index} className="lyrics">{val}</p>);
-        }
-      });
+      // const textLyrics1 = this.state.videos.lyrics.map((val, index) => {
+      //   if (val) {
+      //     return (<p key={index} className="lyrics">{val}</p>);
+      //   }
+      // });
       return (
         <div className="mainDisplay container">
           <div className="row">
@@ -57,13 +57,25 @@ class DisplayVideo extends React.Component {
               <iframe width="560" height="560" src={`${src}?autoplay=1`} frameBorder={0} allowFullScreen="allowFullScreen" />
             </div>
             <div className="col-xs-12 col-sm-12 col-md-4 col-lg-6 lyricText2">
-              {textLyrics} {textLyrics1}
+              {textLyrics}
+              {/* {textLyrics} {textLyrics1} */}
             </div>
           </div>
         </div>
       );
+    } else {
+      return (
+        <div>
+          <h3 id='progress'>Retrieving Video and Lyrics. </h3>
+          <ProgressBar active now={45} />
+        <div className="alert">
+          <span className="closebtn test" ></span>
+      <p className="animated fadeIn">Video and Lyrics are unavailable. Please choose a different song.</p>
+      </div>
+
+        </div>
+      );
     }
-    return <ProgressBar active now={45} />;
   }
 }
 export default DisplayVideo;
