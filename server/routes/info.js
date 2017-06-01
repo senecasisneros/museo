@@ -19,13 +19,28 @@ router.route('/').post((req, res) => {
 
     return axios.get(`${urlLyrics + newArtist}+${newSongName}+&what=all`);
   })
+  .catch(err => {
+    console.error('errGet1:', err);
+    throw err;
+  })
   .then(r => {
     const html = r.data;
     const $ = cheerio.load(html);
-    lyricsUrl = $('tr')['0'].children[0].children[1].attribs.href;
+    lyricsUrl = $('tr')['0'].children[0].children[1].attribs.href || 'undefined';
+    if (lyricsUrl === 'undefined') {
+      return;
+    } else {
     return axios.get(lyricsUrl);
+  }
+  })
+  .catch(err => {
+    console.error('errGet2:', err);
+    throw err;
   })
   .then(r => {
+    if (!r) {
+      return;
+    }
     const html = r.data;
     const $ = cheerio.load(html);
     const getLyrics = $('.col-lg-8')['0'].children[16].children;
@@ -43,7 +58,7 @@ router.route('/').post((req, res) => {
     res.send({ songName, artist, urlVideo, lyrics });
   })
   .catch(err => {
-    console.error('errGet:', err);
+    console.error('errGet3:', err);
     throw err;
   });
 });
