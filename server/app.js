@@ -2,7 +2,6 @@
 const PORT = process.env.PORT || 8000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/Museo';
 
-
 // PACKAGE REQUIRES
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');

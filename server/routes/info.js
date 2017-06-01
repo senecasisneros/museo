@@ -44,7 +44,6 @@ router.route('/').post((req, res) => {
     const html = r.data;
     const $ = cheerio.load(html);
     const getLyrics = $('.col-lg-8')['0'].children[16].children;
-    console.log('getLyrics:', getLyrics);
     const lyrics = getLyrics.map((val, index) => {
       if (index >= 2) {
         if (val.data) {
@@ -56,7 +55,7 @@ router.route('/').post((req, res) => {
       }
       if (!lyricsUrl) {
             return;
-          } 
+          }
       return null;
     });
     res.send({ songName, artist, urlVideo, lyrics });
