@@ -4,6 +4,8 @@ import VideoActions from '../actions/VideoActions';
 import VideoStore from '../stores/VideoStore';
 import OpenResult from './OpenResult';
 
+//Component renders the search results in a table.
+
 class DisplayResults extends React.Component {
   constructor(props) {
     super(props);
@@ -38,7 +40,9 @@ class DisplayResults extends React.Component {
     });
   }
   render() {
+    //results: Object with artist, songName and urlVideo
     if (this.state.results.length !== 0) {
+      console.log('results:', this.state.results);
       const trs = this.state.results.map((val, index) => (
         <tr onClick={this.open.bind(null, val)} key={index + 1}>
           <td>{val.artist}</td>

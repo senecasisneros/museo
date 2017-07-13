@@ -2,6 +2,8 @@ import React from 'react';
 import { FormGroup, FormControl, Button } from 'react-bootstrap';
 import VideoActions from '../actions/VideoActions';
 
+//Component renders search form.
+
 class SearchVideoLyric extends React.Component {
   constructor(props) {
     super(props);
@@ -35,7 +37,6 @@ class SearchVideoLyric extends React.Component {
     e.preventDefault();
     const { songName, artist } = this.state;
     if (songName || artist) {
-      // trigger action
       VideoActions.getInfo({ songName, artist });
       this.setState({
         songName: '',

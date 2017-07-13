@@ -3,6 +3,8 @@ import { Modal, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import DisplayVideo from './DisplayVideo';
 
+//Component displays a modal
+
 class OpenResult extends React.Component {
   static propTypes = {
     result: PropTypes.object,
